@@ -1,0 +1,36 @@
+
+\section*{Chapter 3}
+\subsection*{Ex. 3.1}
+For simplicity, let's denote variable with tilde as skipping skipping column $i$.
+Here we explore bit more in this problem to clarify how to compute F-score.
+\begin{itemize}
+	\item $RSS_0$: $(y - X\beta)^T(y - X\beta)$
+	\item $RSS_1$: $(y - \tilde{X}\tilde{\beta})^T(y - \tilde{X}\tilde{\beta})$
+	\item $rss_1$: $(y - X\beta + X_i\beta_i)^T(y - X\beta + X_i\beta_i)$
+\end{itemize}
+
+or say, $RSS_1$ uses refit $\tilde{\beta}$, $rss_1$ uses original $\beta$.
+$$rss_1 - RSS_0 = X_i^TX_i\beta_i^2 = (X^TX)_{ii}\beta_{i}^2.$$
+
+Denote
+\begin{itemize}
+	\item $span{\tilde{X}} = span\{X_{k}|k\neq i\}$
+	\item $span{X} = span\{X_{k}\}$
+	\item $P_{A}$, projection matrix to $span{A}.$
+	\item $\tilde{X}^{\perp}$ is the orthogonal complement of $span\{\tilde{X}\}$ inside $span\{X\}$.
+\end{itemize}
+
+$$RSS_1 - RSS_0=y^T P_{\tilde{X}}y - y^T P_{X}y=y^T P_{\tilde{X}^{\perp}}y.$$
+
+$$F_{i} = \frac{(RSS_1 - RSS_0)/(p_1 - p_0)}{RSS_1 / (N - p_1 -1)}=\frac{y^T P_{\tilde{X}^{\perp}}y}{\hat{\sigma}^2}=\frac{x_{i}^T P_{\tilde{X}^{\perp}}x_{i}}{\hat{\sigma}^2}\hat{\beta{i}}^2=\frac{\Vert X_{i}^{\perp}\Vert^2}{\hat{\sigma}^2}\hat{\beta{i}}^2.$$
+
+$$z_{i}^2 = \frac{\hat{\beta_i}^2}{\hat{\sigma}^2(X^TX)^{-1}_{ii}}.$$
+
+Now let's compute $(X^TX)^{-1}_{ij}$. For arbitrary $\epsilon\sim\mathcal{N}(0, I_{N})$,
+\begin{eqnarray*}
+	& &(X^TX)^{-1}_{ij}\\
+	&=& COV\left((X^TX)^{-1}X^T \epsilon, (X^TX)^{-1}X^T \epsilon\right)\\
+	&=& \mathbb{E}(\beta_{\epsilon, X, {i}} \beta_{\epsilon, X, {j}})\\
+	&=& \frac{X_{i}^{\perp}\cdot X_{j}^{\perp}}{\Vert X_{i}^{\perp}\Vert^2 \Vert X_{j}^{\perp}\Vert^2}
+\end{eqnarray*}
+Thus we have $z_{i}^2 = \frac{\hat{\beta_i}^2}{\hat{\sigma}^2(X^TX)^{-1}_{ii}}= \frac{\hat{\beta_i}^2\Vert X_{i}^{\perp}\Vert^2}{\hat{\sigma}^2}=F_{i}.$ And $f_{i}=\frac{\hat{\beta_i}^2(X^tX)_{ii}}{\hat{\sigma}^2}$
