@@ -3,17 +3,17 @@
 This result holds for standard Euclidean norm. For example we could consider a metric space $(\mathbb{R}^3, \Vert\cdot\Vert)$ where
 $\Vert a_0 e_0 + a_1 e_1 + a_2 e_2\Vert= 3 a_0^2 + a_1^2 + a_2^2$ and $\hat{y} = (0.4, 0.3, 0.3).$
 \begin{itemize}
-  \item Task 1: largest element of $\hat{y}$ is the first element.
-  \item Task 2: $\Vert \hat{y} - t_0 \Vert $ = 1.26, $\Vert \hat{y} - t_{1, 2} \Vert $ = 1.06. $\argmin \Vert \hat{y} - t_{i} \Vert = 1, 2 \neq 0.$
+	\item Task 1: largest element of $\hat{y}$ is the first element.
+	\item Task 2: $\Vert \hat{y} - t_0 \Vert $ = 1.26, $\Vert \hat{y} - t_{1, 2} \Vert $ = 1.06. $\argmin \Vert \hat{y} - t_{i} \Vert = 1, 2 \neq 0.$
 \end{itemize}
 For standard Euclidean norm, we have,
-  $$\Vert t_k - \hat{y}\Vert =  \sum_{i\neq k}\hat{y}^2_i + (1 - \hat{y}_{k})^2 = 1 + TSS(\hat{y}) - 2y_{k}.$$
+$$\Vert t_k - \hat{y}\Vert =  \sum_{i\neq k}\hat{y}^2_i + (1 - \hat{y}_{k})^2 = 1 + TSS(\hat{y}) - 2y_{k}.$$
 Thus we have,
 \begin{eqnarray*}
-  & & \argmin\Vert t_k - \hat{y}\Vert \\
-  &=& \argmin(1 + TSS(\hat{y}) - 2y_{k}) \\
-  &=& \argmin(- 2y_{k}) \\
-  &=& \argmax(\hat{y}).
+	& & \argmin\Vert t_k - \hat{y}\Vert \\
+	&=& \argmin(1 + TSS(\hat{y}) - 2y_{k}) \\
+	&=& \argmin(- 2y_{k}) \\
+	&=& \argmax(\hat{y}).
 \end{eqnarray*}
 
 \subsection*{Ex. 2.2}
@@ -28,21 +28,21 @@ For samples follows multivariate Gaussian, $r^2 = \sum_{i=1}^{p} x_i^2 \sim \chi
 
 \subsection*{Ex. 2.5}
 \begin{eqnarray*}
-EPE(x_0) &=& \mathbb{E}_{\mathcal{T}, x_0}(y_0 - \hat{y_0})^2 \\
-         &=& \mathbb{E}_{\mathcal{T}, x_0}(y_0 - \mathbb{E}_{\mathcal{T}, x_0}y_0)^2 + \mathbb{E}_{\mathcal{T}, x_0}(\mathbb{E}_{\mathcal{T}, x_0}y_0- \hat{y_0})^2 \\
-         &=& \mathbb{E}_{\mathcal{T}, x_0}\epsilon^2 + \mathbb{E}_{\mathcal{T}, x_0}(x_0\beta - x_0\hat{\beta})^2 \\
-         &=& \mathbb{E}\epsilon^2 +  x_0\mathbb{E}_{\mathcal{T}}(\beta - \hat{\beta})^2 \\
-         &=& \mathbb{E}\epsilon^2 +  x_0\mathbb{E}_{\mathcal{T}}\left(\beta - (X^TX)^{-1}X^{T}(X\beta + \epsilon)\right)^2 \\
-         &=& \mathbb{E}\epsilon^2 +  x_0\mbox{Var}\left((X^TX)^{-1}X^{T}\epsilon\right) \\
-         &=& \sigma^2 +  x_0 (X^TX)^{-1}.
+	EPE(x_0) &=& \mathbb{E}_{\mathcal{T}, x_0}(y_0 - \hat{y_0})^2 \\
+	&=& \mathbb{E}_{\mathcal{T}, x_0}(y_0 - \mathbb{E}_{\mathcal{T}, x_0}y_0)^2 + \mathbb{E}_{\mathcal{T}, x_0}(\mathbb{E}_{\mathcal{T}, x_0}y_0- \hat{y_0})^2 \\
+	&=& \mathbb{E}_{\mathcal{T}, x_0}\epsilon^2 + \mathbb{E}_{\mathcal{T}, x_0}(x_0\beta - x_0\hat{\beta})^2 \\
+	&=& \mathbb{E}\epsilon^2 +  x_0\mathbb{E}_{\mathcal{T}}(\beta - \hat{\beta})^2 \\
+	&=& \mathbb{E}\epsilon^2 +  x_0\mathbb{E}_{\mathcal{T}}\left(\beta - (X^TX)^{-1}X^{T}(X\beta + \epsilon)\right)^2 \\
+	&=& \mathbb{E}\epsilon^2 +  x_0\mbox{Var}\left((X^TX)^{-1}X^{T}\epsilon\right) \\
+	&=& \sigma^2 +  x_0 (X^TX)^{-1}.
 \end{eqnarray*}
 
 \subsection*{Ex. 2.6}
 Decompose sample space $\Omega=\bigoplus_{x_i}\Omega_i=\bigoplus_{i}\{(x_i, y_{ij})\}.$
 \begin{eqnarray*}
-SSR(\Omega_i) &=& \sum_{j}[y_{ij} - f_{\theta}(x_{i})]^2 \\
-&=&\sum_{j}y_{ij}^2-2 \sum_{j}y_{ij}f_{\theta}(x_{i}) + n_if_{\theta}(x_{i})^2\\
-&=&n_{i}\left(f_{\theta}(x_{i}) - \frac{1}{n_{i}}\sum_{j}y_{ij}\right)^2 + \phi(y_{ij}).
+	SSR(\Omega_i) &=& \sum_{j}[y_{ij} - f_{\theta}(x_{i})]^2 \\
+	&=&\sum_{j}y_{ij}^2-2 \sum_{j}y_{ij}f_{\theta}(x_{i}) + n_if_{\theta}(x_{i})^2\\
+	&=&n_{i}\left(f_{\theta}(x_{i}) - \frac{1}{n_{i}}\sum_{j}y_{ij}\right)^2 + \phi(y_{ij}).
 \end{eqnarray*}
 Hence the problem reduces to weighted least square weights $n_{i}$.
 
@@ -51,33 +51,33 @@ Hence the problem reduces to weighted least square weights $n_{i}$.
 
 Linear regression:
 \begin{eqnarray*}
-\hat{f}(x_0)&=&x_0\hat{\beta} \\
-&=& x_0 (X^{T}X)^{-1} X^{T}y \\
-&=& \sum_{i} [x_0 (X^{T}X)^{-1} X^{T}]_{i}y_{i}.
+	\hat{f}(x_0)&=&x_0\hat{\beta} \\
+	&=& x_0 (X^{T}X)^{-1} X^{T}y \\
+	&=& \sum_{i} [x_0 (X^{T}X)^{-1} X^{T}]_{i}y_{i}.
 \end{eqnarray*}
 
-K-nearest negbourhood:
+K-nearest neighbourhood:
 \begin{eqnarray*}
-\hat{f}(x_0)&=& \sum_{i} \frac{1}{k} I_{i\in argmin_{k}\overrightarrow{d}(x_0, \mathcal{X})} y_{i}.
+	\hat{f}(x_0)&=& \sum_{i} \frac{1}{k} I_{i\in argmin_{k}\overrightarrow{d}(x_0, \mathcal{X})} y_{i}.
 \end{eqnarray*}
 (b) $\mathbb{E}_{\mathcal{Y}|\mathcal{X}}(MSE)$
 \begin{eqnarray*}
-&& \mathbb{E}_{\mathcal{Y}|\mathcal{X}} \left[f(x_0) - \hat{f}(x_0)\right]^2\\
-&=& \mathbb{E}_{\mathcal{Y}|\mathcal{X}} \left[f(x_0) -  \mathbb{E}_{\mathcal{Y}|\mathcal{X}} \hat{f}(x_0) + \mathbb{E}_{\mathcal{Y}|\mathcal{X}} \hat{f}(x_0)- \hat{f}(x_0)\right]^2 \\
-&=& \mathbb{E}_{\mathcal{Y}|\mathcal{X}} \left[f(x_0) -  \mathbb{E}_{\mathcal{Y}|\mathcal{X}} \hat{f}(x_0)\right]^2 + \mathbb{E}_{\mathcal{Y}|\mathcal{X}}\left[\hat{f}(x_0) - \mathbb{E}_{\mathcal{Y}|\mathcal{X}} \hat{f}(x_0)\right]^2\\
-&& - 2\mathbb{E}_{\mathcal{Y}|\mathcal{X}}\left[f(x_0) -  \mathbb{E}_{\mathcal{Y}|\mathcal{X}} \hat{f}(x_0)\right]\left[\hat{f}(x_0) - \mathbb{E}_{\mathcal{Y}|\mathcal{X}} \hat{f}(x_0)\right] \\
-&=& \left[f(x_0) -  \mathbb{E}_{\mathcal{Y}|\mathcal{X}} \hat{f}(x_0)\right]^2  +  \mathbb{E}_{\mathcal{Y}|\mathcal{X}}\left[\hat{f}(x_0) - \mathbb{E}_{\mathcal{Y}|\mathcal{X}} \hat{f}(x_0)\right]^2 \\
-&=& \left[f(x_0) - \sum_{i=1}^N l_{i}(x_0, \mathcal{X})f(x_i)\right]^2  +  \mathbb{E}_{\mathcal{Y}|\mathcal{X}}\left[\sum_{i=1}^N l_{i}(x_0, \mathcal{X})\epsilon_i\right]^2\\
-&=& \left[f(x_0) - \sum_{i=1}^N l_{i}(x_0, \mathcal{X})f(x_i)\right]^2  +  \sum_{i=1}^N l_{i}^2(x_0, \mathcal{X})\sigma^2.
+	&& \mathbb{E}_{\mathcal{Y}|\mathcal{X}} \left[f(x_0) - \hat{f}(x_0)\right]^2\\
+	&=& \mathbb{E}_{\mathcal{Y}|\mathcal{X}} \left[f(x_0) -  \mathbb{E}_{\mathcal{Y}|\mathcal{X}} \hat{f}(x_0) + \mathbb{E}_{\mathcal{Y}|\mathcal{X}} \hat{f}(x_0)- \hat{f}(x_0)\right]^2 \\
+	&=& \mathbb{E}_{\mathcal{Y}|\mathcal{X}} \left[f(x_0) -  \mathbb{E}_{\mathcal{Y}|\mathcal{X}} \hat{f}(x_0)\right]^2 + \mathbb{E}_{\mathcal{Y}|\mathcal{X}}\left[\hat{f}(x_0) - \mathbb{E}_{\mathcal{Y}|\mathcal{X}} \hat{f}(x_0)\right]^2\\
+	&& - 2\mathbb{E}_{\mathcal{Y}|\mathcal{X}}\left[f(x_0) -  \mathbb{E}_{\mathcal{Y}|\mathcal{X}} \hat{f}(x_0)\right]\left[\hat{f}(x_0) - \mathbb{E}_{\mathcal{Y}|\mathcal{X}} \hat{f}(x_0)\right] \\
+	&=& \left[f(x_0) -  \mathbb{E}_{\mathcal{Y}|\mathcal{X}} \hat{f}(x_0)\right]^2  +  \mathbb{E}_{\mathcal{Y}|\mathcal{X}}\left[\hat{f}(x_0) - \mathbb{E}_{\mathcal{Y}|\mathcal{X}} \hat{f}(x_0)\right]^2 \\
+	&=& \left[f(x_0) - \sum_{i=1}^N l_{i}(x_0, \mathcal{X})f(x_i)\right]^2  +  \mathbb{E}_{\mathcal{Y}|\mathcal{X}}\left[\sum_{i=1}^N l_{i}(x_0, \mathcal{X})\epsilon_i\right]^2\\
+	&=& \left[f(x_0) - \sum_{i=1}^N l_{i}(x_0, \mathcal{X})f(x_i)\right]^2  +  \sum_{i=1}^N l_{i}^2(x_0, \mathcal{X})\sigma^2.
 \end{eqnarray*}
 
 (c) $\mathbb{E}_{\mathcal{Y}, \mathcal{X}}(MSE)$
 
 Notice that $\hat{f}(x_0)$ is $(\mathcal{Y, X})$ measurable, $\mathbb{E}_{\mathcal{Y, X}}\hat{f}(x_0)=\hat{f}(x_0).$
 \begin{eqnarray*}
-&& \mathbb{E}_{\mathcal{Y},\mathcal{X}} \left[f(x_0) - \hat{f}(x_0)\right]^2\\
-&=& \left[f(x_0) -  \mathbb{E}_{\mathcal{Y},\mathcal{X}} \hat{f}(x_0)\right]^2  +  \mathbb{E}_{\mathcal{Y},\mathcal{X}}\left[\hat{f}(x_0) - \mathbb{E}_{\mathcal{Y},\mathcal{X}} \hat{f}(x_0)\right]^2 \\
-&=& \left[f(x_0) - \hat{f}(x_0)\right]^2.
+	&& \mathbb{E}_{\mathcal{Y},\mathcal{X}} \left[f(x_0) - \hat{f}(x_0)\right]^2\\
+	&=& \left[f(x_0) -  \mathbb{E}_{\mathcal{Y},\mathcal{X}} \hat{f}(x_0)\right]^2  +  \mathbb{E}_{\mathcal{Y},\mathcal{X}}\left[\hat{f}(x_0) - \mathbb{E}_{\mathcal{Y},\mathcal{X}} \hat{f}(x_0)\right]^2 \\
+	&=& \left[f(x_0) - \hat{f}(x_0)\right]^2.
 \end{eqnarray*}
 
 \subsection*{Ex. 2.8}
@@ -85,17 +85,17 @@ TODO: code up.
 
 \subsection*{Ex. 2.9}
 Write train set as $(X_0, y_0)$, test set as $(X_1, y_1)$, projection matrix as $P_i$.
-Rewrite $\hat{\beta} = (X_0^T X_0)^{-1}X_0^{T}\epsilon_0 + \beta.$ On train set, we have the following, 
+Rewrite $\hat{\beta} = (X_0^T X_0)^{-1}X_0^{T}\epsilon_0 + \beta.$ On train set, we have the following,
 \begin{eqnarray*}
-&&\mathbb{E}_{0}\left[(y_0 - X_0\hat{\beta})^T(y_0 - X_0\hat{\beta})\right]\\
-&=&\mathbb{E}_{0}\left[(\epsilon_0 - P_0\epsilon)^T(\epsilon_0 - P_0\epsilon_0)\right]\\
-&=&(N - k)\sigma^2.
+	&&\mathbb{E}_{0}\left[(y_0 - X_0\hat{\beta})^T(y_0 - X_0\hat{\beta})\right]\\
+	&=&\mathbb{E}_{0}\left[(\epsilon_0 - P_0\epsilon)^T(\epsilon_0 - P_0\epsilon_0)\right]\\
+	&=&(N - k)\sigma^2.
 \end{eqnarray*}
 On test set, we have,
 \begin{eqnarray*}
-&&\mathbb{E}_{1}\left[(y_1 - X_1\hat{\beta})^T(y_1 - X_1\hat{\beta})\right]\\
-&=&\mathbb{E}_{1}\left[(\epsilon_1 - X_1(X_0^TX_0)^{-1}X_0^T\epsilon_0)^T(\epsilon_1 - X_1(X_0^TX_0)^{-1}X_0^T\epsilon_0)\right]\\
-&=&N\sigma^2 + trace\left[X_0(X_0^TX_0)^{-1}X_1^TX_1(X_0^TX_0)^{-1}X_0^T\right]\sigma^2\\
-&=&N\sigma^2 + trace\left[X_1(X_0^TX_0)^{-1}X_1^T\right]\sigma^2\\
-&\geq& N\sigma^2.
+	&&\mathbb{E}_{1}\left[(y_1 - X_1\hat{\beta})^T(y_1 - X_1\hat{\beta})\right]\\
+	&=&\mathbb{E}_{1}\left[(\epsilon_1 - X_1(X_0^TX_0)^{-1}X_0^T\epsilon_0)^T(\epsilon_1 - X_1(X_0^TX_0)^{-1}X_0^T\epsilon_0)\right]\\
+	&=&N\sigma^2 + trace\left[X_0(X_0^TX_0)^{-1}X_1^TX_1(X_0^TX_0)^{-1}X_0^T\right]\sigma^2\\
+	&=&N\sigma^2 + trace\left[X_1(X_0^TX_0)^{-1}X_1^T\right]\sigma^2\\
+	&\geq& N\sigma^2.
 \end{eqnarray*}
