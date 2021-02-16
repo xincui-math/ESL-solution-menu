@@ -1,3 +1,3 @@
-# ESL-complete-solution
+# ESL solution menu
 
-The goal of this repository is to create a complete solution menu to ESL.
+The goal of this repository is to create a solution menu to ESL.
