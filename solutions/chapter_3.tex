@@ -241,5 +241,40 @@ Cauchy Schwarz gives,
 $$u^TY^TXv\leq\frac{\Vert \Sigma_{XX}^{-1/2}\Sigma_{XY}\Sigma_{YY}^{-1/2}c \Vert}{\Vert c \Vert}.$$
 Equality holds when $d = \lambda \Sigma_{XX}^{-1/2}\Sigma_{XY}\Sigma_{YY}^{-1/2}c.$ Perform SVD decomposition on $ \Sigma_{XX}^{-1/2}\Sigma_{XY}\Sigma_{YY}^{-1/2} = UD V^{T}$, and consider $\tilde{c} = V^T c.$
 $$\frac{\Vert \Sigma_{XX}^{-1/2}\Sigma_{XY}\Sigma_{YY}^{-1/2}c \Vert}{\Vert c \Vert}=\frac{\Vert\tilde{c}^T \Sigma \tilde{c}\Vert}{\Vert \tilde{c}\Vert}.$$
-Optimization result $\tilde{c}$ gives identity matrix. Hence $c$ gives $V$, left singular vectors, equality condition gives $d$ are right singular vectors of $\Sigma_{XX}^{-1/2}\Sigma_{XY}\Sigma_{YY}^{-1/2}$.
+Optimization result $\tilde{c}$ gives identity matrix. Hence $c$ gives $V$, right singular vectors, equality condition gives $d$ are left singular vectors of $\Sigma_{XX}^{-1/2}\Sigma_{XY}\Sigma_{YY}^{-1/2}$. This gives same conclusion (after transpose).
+$$u_1 = \Sigma_{YY}^{-1/2} u_{1}^*$$
+$$v_1 = \Sigma_{XX}^{-1/2} v_{1}^*$$
 
+\subsection*{Ex. 3.21}
+\begin{eqnarray*}
+    & & tr\left[(y-XB)\Sigma^{-1}(y-XB)^{T}\right]\\
+    &=& tr\left[(y^{*}-XB\Sigma^{-1/2})^{T}(y^{*}-XB\Sigma^{-1/2})\right]\\
+    &=& tr\left[(Z-A)(Z-A)^T\right] + \mbox{const}(B)
+\end{eqnarray*}
+where $Z=\Sigma_{YY}^{-1/2}\Sigma_{YX}\Sigma_{XX}^{-1/2}$, $A=\Sigma_{YY}^{-1/2}B^{T}\Sigma_{XX}^{1/2}$. Apply Theorem 3.7.4 in \cite{Brillinger},
+$$A_{opt} = \sum_{j=1}^m d_{j} U_{j} V_{j}^T.$$
+where $U, V$ are singular vectors of $Z$. Hence $B=\Sigma_{XX}^{-1}\Sigma_{YX}\sum_{i} u_{ccr,i} u_{ccr,i}^T,$ where
+$u_{ccr,i} = \Sigma_{YY}^{-1/2}u_{i}.$ $U$ is orthgonal gives $U_{m}^T \Sigma_{YY}^{1/2}$ is generalized inverse of $\Sigma_{YY}^{-1/2}U_{m}.$
+
+\subsection*{Ex. 3.22}
+Replace $\Sigma_{YY}$ to $\Sigma_{residual}$.
+
+\subsection*{Ex. 3.23}
+
+(a)
+\begin{eqnarray*}
+    & & \Vert \langle x_j, y - u(\alpha) \rangle \Vert\\
+    &=& \Vert \langle x_j, y - \alpha X(X^TX)^{-1}X^Ty \rangle \Vert\\
+    &=& \Vert (1 - \alpha)(X^Ty)_{j}\Vert\\
+    &=& N\lambda|1 - \alpha|.
+\end{eqnarray*}
+
+(b) $(y-\alpha X\hat{\beta})^T(y-\alpha X\hat{\beta}) = N + \alpha (\alpha - 2) y^T X \hat{\beta}.$ Let $\alpha = 1$, we have, $y^T X \hat{\beta} = N - RSS.$ Hence
+$(y-\alpha X\hat{\beta})^T(y-\alpha X\hat{\beta}) =N(1-\alpha)^2 + \alpha(2 - \alpha)RSS.$
+$$\mbox{corr}(x_{i}, y-u(\alpha))=\frac{\langle x_{i}, y-u(\alpha)\rangle}{\Vert x_{i}\Vert \Vert y-u(\alpha)\Vert}=\frac{N\lambda|1 - \alpha|}{\sqrt{N}\sqrt{N(1-\alpha)^2 + \alpha(2 - \alpha)RSS}}.$$
+
+(c) $(X_{\mathcal{A}_{k}}^T X_{\mathcal{A}_{k}})^{-1}X_{\mathcal{A}_{k}}^T r_{k}$ is OLS of $r_{k}$ with $X_{\mathcal{A}_{k}}$. Notice that $X$ has mean 0, std 1, $X_{\mathcal{A}_{k}}$ has same correlations with $r_{k}$. Hence (2) directly gives the result. 
+
+\subsection*{Ex. 3.24}
+$$\mbox{cos}(x_{i}, X\hat{\beta})=\frac{(X^T X\hat{\beta})_{i}}{\Vert x_{i}\Vert \Vert X\hat{\beta}\Vert}=\frac{(X_{\mathcal{A}_{k}}^Tr_{k})_{i}}{\sqrt{N} \Vert X\hat{\beta}\Vert}.$$
+$(X_{\mathcal{A}_{k}}^Tr_{k})_{i}$ is constant among $i$ from LAR algorithm.
