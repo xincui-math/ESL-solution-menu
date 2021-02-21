@@ -1,5 +1,5 @@
 \section*{Chapter 2}
-\subsection*{Ex. 2.1}
+\paragraph*{Ex. 2.1}
 This result holds for standard Euclidean norm. For example we could consider a metric space $(\mathbb{R}^3, \Vert\cdot\Vert)$ where
 $\Vert a_0 e_0 + a_1 e_1 + a_2 e_2\Vert= 3 a_0^2 + a_1^2 + a_2^2$ and $\hat{y} = (0.4, 0.3, 0.3).$
 \begin{itemize}
@@ -16,17 +16,17 @@ Thus we have,
 	&=& \argmax(\hat{y}).
 \end{eqnarray*}
 
-\subsection*{Ex. 2.2}
+\paragraph*{Ex. 2.2}
 By the caption of Figure 2.5, we know $\mathbb{P}(x | C_{k})$ and $\mathbb{P}(C_{k})$. The  Bayes decision boundary of the 0 - 1 loss is determined by, $\mathbb{P}(C_{0} | x) = \mathbb{P}(C_{1} | x)$ or equivalently
 $$\mathbb{P}(x | C_{0})\mathbb{P}(C_{0}) = \mathbb{P}(C_{1} | x) \mathbb{P}(C_{1}).$$
 
-\subsection*{Ex. 2.3}
+\paragraph*{Ex. 2.3}
 $X = \min_{dist} \{X_1,...,X_N\} \in \mathbb{R}^1$, $1 - F_X(x) = \mathbb{P}(X > x) = (1 - x^p)^N.$ Median of $X$ is simply the $x_0$ where $F_X(x_0) = \frac{1}{2}.$
 
-\subsection*{Ex. 2.4}
+\paragraph*{Ex. 2.4}
 For samples follows multivariate Gaussian, $r^2 = \sum_{i=1}^{p} x_i^2 \sim \chi^2_{p}.$ Fix a direction $a$, projection $x \cdot a = \sum_{i=1}^{p} x_i a_i \sim \mathcal{N}(0, \sum_{i=1}^{p}a_{i}^2) = \mathcal{N}(0, 1).$ (one can easily prove this using characteristic functions) Thus after projection, the mean is closer to zero in the $\mathbb{L}^2$ sense.
 
-\subsection*{Ex. 2.5}
+\paragraph*{Ex. 2.5}
 \begin{eqnarray*}
 	EPE(x_0) &=& \mathbb{E}_{\mathcal{T}, x_0}(y_0 - \hat{y_0})^2 \\
 	&=& \mathbb{E}_{\mathcal{T}, x_0}(y_0 - \mathbb{E}_{\mathcal{T}, x_0}y_0)^2 + \mathbb{E}_{\mathcal{T}, x_0}(\mathbb{E}_{\mathcal{T}, x_0}y_0- \hat{y_0})^2 \\
@@ -37,7 +37,7 @@ For samples follows multivariate Gaussian, $r^2 = \sum_{i=1}^{p} x_i^2 \sim \chi
 	&=& \sigma^2 +  x_0 (X^TX)^{-1}.
 \end{eqnarray*}
 
-\subsection*{Ex. 2.6}
+\paragraph*{Ex. 2.6}
 Decompose sample space $\Omega=\bigoplus_{x_i}\Omega_i=\bigoplus_{i}\{(x_i, y_{ij})\}.$
 \begin{eqnarray*}
 	SSR(\Omega_i) &=& \sum_{j}[y_{ij} - f_{\theta}(x_{i})]^2 \\
@@ -46,7 +46,7 @@ Decompose sample space $\Omega=\bigoplus_{x_i}\Omega_i=\bigoplus_{i}\{(x_i, y_{i
 \end{eqnarray*}
 Hence the problem reduces to weighted least square weights $n_{i}$.
 
-\subsection*{Ex. 2.7}
+\paragraph*{Ex. 2.7}
 (a) Representations
 
 Linear regression:
@@ -80,10 +80,10 @@ Notice that $\hat{f}(x_0)$ is $(\mathcal{Y, X})$ measurable, $\mathbb{E}_{\mathc
 	&=& \left[f(x_0) - \hat{f}(x_0)\right]^2.
 \end{eqnarray*}
 
-\subsection*{Ex. 2.8}
+\paragraph*{Ex. 2.8}
 TODO: code up.
 
-\subsection*{Ex. 2.9}
+\paragraph*{Ex. 2.9}
 Write train set as $(X_0, y_0)$, test set as $(X_1, y_1)$, projection matrix as $P_i$.
 Rewrite $\hat{\beta} = (X_0^T X_0)^{-1}X_0^{T}\epsilon_0 + \beta.$ On train set, we have the following,
 \begin{eqnarray*}

@@ -1,6 +1,6 @@
 
 \section*{Chapter 3}
-\subsection*{Ex. 3.1}
+\paragraph*{Ex. 3.1}
 For simplicity, let's denote variable with tilde as skipping skipping column $i$.
 Here we explore bit more in this problem to clarify how to compute F-score.
 \begin{itemize}
@@ -36,7 +36,7 @@ Now let's compute $(X^TX)^{-1}_{ij}$. For arbitrary $\epsilon\sim\mathcal{N}(0, 
 Thus we have $z_{i}^2 = \frac{\hat{\beta_i}^2}{\hat{\sigma}^2(X^TX)^{-1}_{ii}}= \frac{\hat{\beta_i}^2\Vert X_{i}^{\perp}\Vert^2}{\hat{\sigma}^2}=F_{i}.$ And $f_{i}=\frac{\hat{\beta_i}^2(X^tX)_{ii}}{\hat{\sigma}^2}$
 
 
-\subsection*{Ex. 3.2}
+\paragraph*{Ex. 3.2}
 
 \begin{itemize}
     \item $\mbox{Var}(a^{T}\beta) = a^{T}COV_\beta a = (X^{T}X)^{-1}\sigma^2$.
@@ -45,7 +45,7 @@ Thus we have $z_{i}^2 = \frac{\hat{\beta_i}^2}{\hat{\sigma}^2(X^TX)^{-1}_{ii}}= 
 
 The first estimation needs $\sigma$, the second one doesn't. (code TBD)
 
-\subsection*{Ex. 3.3}
+\paragraph*{Ex. 3.3}
 For quantity $a^{T}\beta$, we have unbias estimator $\hat{\theta} = a^T\hat{\beta} = a^T (X^{T}X)^{-1}X^{T}y.$ Giving another unbiased estimation $c^{T}y$, write $c^{T} = a^{T}(X^{T}X)^{-1}X^{T} + D$.
 $$\mathbb{E}(\left[a^{T}(X^{T}X)^{-1}X^{T} + D\right]y)=a^{T}\beta + DX\beta.$$
 Hence we have $DX = 0$.
@@ -57,7 +57,7 @@ Hence we have $DX = 0$.
     &=& \var(a^T\hat{\beta}).
 \end{eqnarray*}
 
-\subsection*{Ex. 3.4}
+\paragraph*{Ex. 3.4}
 Give $X = (X_0, X_1, ..., X_{n - 1})$ and $y$.
 \begin{itemize}
     \item $\tilde{\beta_0} = \frac{\cov(X_0, y)}{\cov(X_0, X_0)}$
@@ -65,13 +65,13 @@ Give $X = (X_0, X_1, ..., X_{n - 1})$ and $y$.
 \end{itemize}
 $$y = \sum_{i=0}^{n}\tilde{\beta_i}z_{i} = \sum_{i=1}^{n}\tilde{\beta_i}z_{i}= \sum_{i=1}^{n}\tilde{\beta_i}(x_i - \sum_{j=1}^{i-1} \gamma_{ij} x_j)= \sum_{i=1}^{n}(\tilde{\beta_i}-\sum_{j=i+1}^{n}\Gamma_{ji})x_i.$$
 
-\subsection*{Ex. 3.5}
+\paragraph*{Ex. 3.5}
 \begin{itemize}
     \item $\beta_0^c = \beta_0 + \sum_{j=0}^p\bar{x_j}\beta_j$
     \item $\beta_i^c = \beta_i$
 \end{itemize}
 
-\subsection*{Ex. 3.6}
+\paragraph*{Ex. 3.6}
 Assume prior $\beta \sim N(0, \tau I)$, data samples from $y\sim N(X\beta, \sigma^2 I)$. Posterior distribution has PDF proportional to:
 $$p(\beta|D) \sim  exp\left[-\frac{(y-X\beta)^T(y-X\beta)}{2\sigma^2}-\frac{\beta^T\beta}{2\tau^2}\right]$$
 
@@ -87,10 +87,10 @@ Solves the system, we have,
     \end{cases}
 \]
 
-\subsection*{Ex. 3.7}
+\paragraph*{Ex. 3.7}
 Direct consequence of $p(\beta|D) \sim  exp\left[-\frac{(y-X\beta)^T(y-X\beta)}{2\sigma^2}-\frac{\beta^T\beta}{2\tau^2}\right]$.
 
-\subsection*{Ex. 3.8}
+\paragraph*{Ex. 3.8}
 For special matrix, $X=(e, x_1, x_2, x_3,... , x_p)$, centered matrix is given by
 $$\widetilde{X} = (x_1 - \overline{x_1}, ..., x_p - \overline{x_p}).$$
 Gram-Schmidt processes gives the following.
@@ -100,15 +100,15 @@ Hence column span of $Q_{lower}$ is the same as column span of U.
 
 Denote $\tilde{R} = \Sigma^{-1} R =  V^{*}.$ Consider $r_i$ be $i$-th column vector of $\tilde{R}$. Then use induction not hard to see $\tilde{R}$ is diagonal. This implies $\Sigma V$ is diagonal of 1/-1.
 
-\subsection*{Ex. 3.9}
+\paragraph*{Ex. 3.9}
 Denote $z_{i} = x_{i} - \sum_{k=1}^r q_{k}( x_{i}, q_{k})$, variance explained increment has norm,
 $$\Vert\hat{\beta_{i}}z_{i}\Vert = |\langle y, x_{i} - \sum_{k=1}^r q_{k} (x_{i}, q_{k}) \rangle|.$$
 For new set of feature it is equivalent (and faster) to pick the following,
 $$\mbox{argmax}_{i}\Vert (y^T X - y^TQQ^{T}X)_{i}\Vert.$$
-\subsection*{Ex. 3.10}
+\paragraph*{Ex. 3.10}
 Exercise 3.1 shows $F$ statistics for dropping i-th variable corresponds to $z^2_i$. Hence we just need to drop the variable with lowest $|z|$.
 
-\subsection*{Ex. 3.11}
+\paragraph*{Ex. 3.11}
 \begin{eqnarray*}
     && \left(\frac{d tr[(Y-XB)^{T}(Y-XB)]}{dB}\right)_{ij}\\
     &=& \frac{d}{db_{ij}}\sum_{p,q,v}(y_{pq}-X_{pv}B_{vq})^2\\
@@ -120,7 +120,7 @@ Exercise 3.1 shows $F$ statistics for dropping i-th variable corresponds to $z^2
 Consider symmetric square root $\Sigma^{-\frac{1}{2}}$, the solution is
 $$X^TY\Sigma^{-\frac{1}{2}} -X^{T}XB\Sigma^{-\frac{1}{2}}=0.$$
 
-\subsection*{Ex. 3.12}
+\paragraph*{Ex. 3.12}
 
 $$
     \left(
@@ -140,7 +140,7 @@ $$
 $$
 $RSS(\beta)=(y-\tilde{X}\beta)^T(y-\tilde{X}\beta)  + \lambda \Vert\beta\Vert^2$, same as Ridge regression.
 
-\subsection*{Ex. 3.13}
+\paragraph*{Ex. 3.13}
 Now consider $z_{i}=Xv_{i}=\lambda_{i}u_i$.
 \begin{itemize}
     \item $\langle z_{i}, y\rangle=\lambda_{i}\langle u_{i}, y\rangle$.
@@ -148,7 +148,7 @@ Now consider $z_{i}=Xv_{i}=\lambda_{i}u_i$.
 \end{itemize}
 $$\hat{\beta}^{pcr}(p)=\sum_{i=1}^p\frac{\langle z_{i}, y\rangle}{\langle z_{i}, z_{i}\rangle}v_i=VD^{-1}U^{T}y=\hat{\beta}^{ls}.$$
 
-\subsection*{Ex. 3.14}
+\paragraph*{Ex. 3.14}
 \begin{itemize}
     \item $z_{1} = \sum_{j=1}^{p}\langle x_{j}, y\rangle x_{j}$.
     \item $x_{j}^{1}=x_{j}^0-\widehat{\phi_{1j}}\frac{z_1}{\langle z_1, z_1\rangle}$
@@ -158,7 +158,7 @@ Using $x_{i}$ are orthogonal, we have,
 $$\langle z_1, y\rangle = \langle z_1, z_1\rangle=\sum_{j=1}^p \widehat{\phi_{1j}}^2.$$
 This implies $\widehat{\phi_{2j}} = \langle x_{j}^{1}, y \rangle =0.$
 
-\subsection*{Ex. 3.15}
+\paragraph*{Ex. 3.15}
 (PLS)
 $$\max_{\alpha}\mbox{corr}^2(y, X\alpha)\var(X\alpha)$$
 $$\mbox{subject to }\Vert\alpha\Vert=1, \alpha^T S \phi_{l}=0.$$
@@ -175,7 +175,7 @@ Decompose $\mbox{span}(X)=X_{proj}\oplus X_{ortho}$ using inner product. Restric
 \end{eqnarray*}
 This implies $\alpha_i\sim \langle y, x_{iortho}\rangle.$
 
-\subsection*{Ex. 3.16}
+\paragraph*{Ex. 3.16}
 Consider $y = \sum_{i} \alpha_i x_i + \epsilon$, where $\langle x_{i}, x_{j}\rangle=\delta_{ij}.$
 
 Notice for any $S$, we always have estimated $\widehat{\beta_{i}^{(S)}} =\widehat{\beta_i}=\langle y, x_i\rangle$.
@@ -215,15 +215,15 @@ Hence $\beta_{i}^{Ridge}=\frac{\widehat{\beta_i}}{\lambda + 1}.$
 \end{itemize}
 Rephrase the above analysis gives $\beta^{Lasso}_{j} = \mbox{sign}(\hat{\beta}_{j})(\hat{\beta}_{j} - \lambda)_+$.
 
-\subsection*{Ex. 3.17}
+\paragraph*{Ex. 3.17}
 Code TBD.
 
-\subsection*{Ex. 3.18}
+\paragraph*{Ex. 3.18}
 Solving $\beta$ is equivalent represent $y_{proj}$ in coordinate $X$. The PLS solves a set of orthonormal basis iteratively for space $\mbox{span}\{X\},$ namely $z_{m}.$ Under $z_{m}$,
 $$\beta_{z_m}=\frac{\langle z_{m}, y\rangle}{\langle z_{m}, z_{m}\rangle}_{I}.$$
 This formula matches the conjugate gradients algorithm.
 
-\subsection*{Ex. 3.19}
+\paragraph*{Ex. 3.19}
 (1) $L^2$ norm as a decreasing function of $\lambda$ in Ridge regression.
 \begin{eqnarray*}
     &&\frac{d}{d\lambda} \Vert \beta^{ridge}\Vert^2\\
@@ -234,7 +234,7 @@ This formula matches the conjugate gradients algorithm.
 \end{eqnarray*}
 (2) $L^1$ norm may not be a decreasing function of $\lambda$ in Lasso regression.
 
-\subsection*{Ex. 3.20}
+\paragraph*{Ex. 3.20}
 (CCR problem) Follow the exact same approach in \cite{Wiki_CCR}.
 $c = \Sigma_{YY}^{1/2}u$, $d = \Sigma_{XX}^{1/2}v$.
 Cauchy Schwarz gives,
@@ -245,7 +245,7 @@ Optimization result $\tilde{c}$ gives identity matrix. Hence $c$ gives $V$, righ
 $$u_1 = \Sigma_{YY}^{-1/2} u_{1}^*$$
 $$v_1 = \Sigma_{XX}^{-1/2} v_{1}^*$$
 
-\subsection*{Ex. 3.21}
+\paragraph*{Ex. 3.21}
 \begin{eqnarray*}
     & & tr\left[(y-XB)\Sigma^{-1}(y-XB)^{T}\right]\\
     &=& tr\left[(y^{*}-XB\Sigma^{-1/2})^{T}(y^{*}-XB\Sigma^{-1/2})\right]\\
@@ -256,10 +256,10 @@ $$A_{opt} = \sum_{j=1}^m d_{j} U_{j} V_{j}^T.$$
 where $U, V$ are singular vectors of $Z$. Hence $B=\Sigma_{XX}^{-1}\Sigma_{YX}\sum_{i} u_{ccr,i} u_{ccr,i}^T,$ where
 $u_{ccr,i} = \Sigma_{YY}^{-1/2}u_{i}.$ $U$ is orthgonal gives $U_{m}^T \Sigma_{YY}^{1/2}$ is generalized inverse of $\Sigma_{YY}^{-1/2}U_{m}.$
 
-\subsection*{Ex. 3.22}
+\paragraph*{Ex. 3.22}
 Replace $\Sigma_{YY}$ to $\Sigma_{residual}$.
 
-\subsection*{Ex. 3.23}
+\paragraph*{Ex. 3.23}
 
 (a)
 \begin{eqnarray*}
@@ -273,8 +273,68 @@ Replace $\Sigma_{YY}$ to $\Sigma_{residual}$.
 $(y-\alpha X\hat{\beta})^T(y-\alpha X\hat{\beta}) =N(1-\alpha)^2 + \alpha(2 - \alpha)RSS.$
 $$\mbox{corr}(x_{i}, y-u(\alpha))=\frac{\langle x_{i}, y-u(\alpha)\rangle}{\Vert x_{i}\Vert \Vert y-u(\alpha)\Vert}=\frac{N\lambda|1 - \alpha|}{\sqrt{N}\sqrt{N(1-\alpha)^2 + \alpha(2 - \alpha)RSS}}.$$
 
-(c) $(X_{\mathcal{A}_{k}}^T X_{\mathcal{A}_{k}})^{-1}X_{\mathcal{A}_{k}}^T r_{k}$ is OLS of $r_{k}$ with $X_{\mathcal{A}_{k}}$. Notice that $X$ has mean 0, std 1, $X_{\mathcal{A}_{k}}$ has same correlations with $r_{k}$. Hence (2) directly gives the result. 
+(c) $(X_{\mathcal{A}_{k}}^T X_{\mathcal{A}_{k}})^{-1}X_{\mathcal{A}_{k}}^T r_{k}$ is OLS of $r_{k}$ with $X_{\mathcal{A}_{k}}$. Notice that $X$ has mean 0, std 1, $X_{\mathcal{A}_{k}}$ has same correlations with $r_{k}$. Hence (2) directly gives the result.
 
-\subsection*{Ex. 3.24}
+\paragraph*{Ex. 3.24}
 $$\mbox{cos}(x_{i}, X\hat{\beta})=\frac{(X^T X\hat{\beta})_{i}}{\Vert x_{i}\Vert \Vert X\hat{\beta}\Vert}=\frac{(X_{\mathcal{A}_{k}}^Tr_{k})_{i}}{\sqrt{N} \Vert X\hat{\beta}\Vert}.$$
 $(X_{\mathcal{A}_{k}}^Tr_{k})_{i}$ is constant among $i$ from LAR algorithm.
+
+\paragraph*{Ex. 3.25}
+Equivalent to pick minimum $\alpha_{i}$ for tie covariance.
+$$\min_{\alpha_i} \{N(1-\alpha)\lambda = |x_{i}^Tr_{k} - \alpha x_{i}^T v_{\mathcal{A}_{k}} u|\}.$$
+
+\paragraph*{Ex. 3.26}
+Normalize $\widetilde{x_{i}} = (x_{i} - \sum_{k}\frac{\langle x_{i}, z_{k}\rangle}{\langle z_{k}, z_{k}\rangle}z_{k}) / \Vert x_{i} - \sum_{k}\frac{\langle x_{i}, z_{k}\rangle}{\langle z_{k}, z_{k}\rangle}z_{k} \Vert$. Notice that selecting direction $\widetilde{x_{i}}$ is equivalent to selecting $x_{i}$. $SSR$ increment of picking $\widetilde{x_{i}}$ is $|  \langle \widetilde{x_{j}}, \widetilde{r_{k}}\rangle|$.
+
+\paragraph*{Ex. 3.27}
+
+Objective $L(\beta) + \lambda \sum_{j} (\beta_{j}^+ + \beta_{j}^-)$, constrains $-\beta_{j}^\pm \leq 0$. Hence dual function is,
+$L(\beta) + \lambda \sum_{j} (\beta_{j}^+ + \beta_{j}^-)-\sum_{j}\lambda_{j}^{+}\beta_{j}^{+}-\sum_{j}\lambda_{j}^{-}\beta_{j}^{-}$. KKT condition.
+
+\begin{eqnarray*}
+\nabla L_{j} +\lambda - \lambda_{j}^+ = 0  & (\mbox{Stationarity}, \beta_{j}^+)  \\
+-\nabla L_{j} +\lambda - \lambda_{j}^- = 0 & (\mbox{Stationarity}, \beta_{j}^-) \\
+\beta_{j}^{\pm} \geq 0                     & (\mbox{Primal feasibility}) \\
+\lambda_{j}^{\pm} \geq 0                   & (\mbox{Dual feasibility}) \\
+\lambda_{j}^{\pm} \beta_{j}^{\pm} = 0      & (\mbox{Complementary slackness}) \\
+\end{eqnarray*}
+
+(b) $|\nabla L_{j}| = \frac{1}{2} (\lambda_{j}^+ - \lambda_{j}^-) \leq \frac{1}{2} (\lambda_{j}^+ + \lambda_{j}^-)  = \lambda$.
+
+Case 1: $\lambda = 0$, inequality above implies $\nabla L_{j} = 0.$
+
+Case 2: $\lambda > 0$, $\beta_{j}^+ > 0$, complementary slackness gives $\lambda_{j}^{+} = 0$ hence $\lambda_{j}^{-} > 0$ which implies $\beta_{j}^{-} = 0$ again by complementary slackness. $\nabla L_{j} = -\lambda$.
+
+Case 3: similar to case 2.
+
+Combine the gradient, we have a expression of $\lambda$.
+$$\nabla_{j}L = - x_{j}^T (y - X\beta_\lambda).$$
+
+If active predictor is not changed $X^TX\beta_\lambda$ is an affine vector of $\lambda$, hence $\beta_\lambda$ is affine.
+
+\paragraph*{Ex. 3.28} Consider $\beta = \beta_{i}^{(1, 2)}$ solves duplicated Lasso optimization, we have $|\beta_{i}^{(1)}| + |\beta_{i}^{(2)}| \geq |\beta_{i}^{(1)} + \beta_{i}^{(2)}|.$
+This implies $\beta_{i}^{(1)} + \beta_{i}^{(2)}$ solves the original Lasso problem (3.51) with the exact same $t$. Give the original Lasso problem, any pair $ \beta_{i}^{(1)} = \lambda \beta_i$, $ \beta_{i}^{(2)} = (1 - \lambda) \beta_i$ also solves the duplicated Lasso problem (for any $\lambda$ in [0, 1]).
+
+\paragraph*{Ex. 3.29} Optimization of the duplicated ridge regression.
+$$L(\beta)=(y-X\sum_{i}\beta_{i})^T(y-X\sum_{i}\beta_{i}) + \lambda \sum_{i}\beta_{i}^T \beta_{i}.$$
+$\nabla_{\beta_{i}}L(\beta) = -2 X (y - X\sum_{i} \beta_{i}) + 2 \lambda \beta_{i} = 0.$ This implies $\beta_{i} = \beta_{j}=\beta$. Thus $\beta = (n X^T X +\lambda I)^{-1}X^Ty$.
+
+\paragraph*{Ex. 3.30}
+
+$$
+    \left(
+    \begin{array}{c}
+            y \\
+            0 \\
+        \end{array}
+    \right)
+    =
+    \left(
+    \begin{array}{c}
+            \widetilde{X}    \\
+            \sqrt{\alpha\lambda} I \\
+        \end{array}
+    \right)
+    \beta + \epsilon.
+$$
+$\mbox{Lasso}_{\frac{\lambda(1-\alpha)}{2}}(\beta)=\frac{1}{2}(y-\tilde{X}\beta)^T(y-\tilde{X}\beta)  + \frac{\alpha\lambda }{2}\Vert\beta\Vert^2 + \frac{\lambda(1-\alpha)}{2} \Vert\beta\Vert$.
