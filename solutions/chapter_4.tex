@@ -1,0 +1,28 @@
+\section*{Chapter 4}
+
+
+\paragraph*{Ex. 4.1} Lagrangian is given by.
+$$L(a, \lambda) = a^T B a - \lambda a^T W a + \lambda.$$
+$\nabla _{a}L = Ba - \lambda Wa = 0$ (eigenvalue problem), $\nabla _{\lambda}L = - a^T W a + 1 = 0$ (normalization).
+
+\paragraph*{Ex. 4.2}
+
+(1) LDA decision boundary of giving class two prediction is $\delta_{2} > \delta_{1}.$
+
+(2) Lagrangian equations on $\beta_{0}$ gives $\beta_{0} = -\frac{1}{N}\beta_{1}(N_1\hat{\mu_1} + N_2\hat{\mu_2}).$ Plug it back to the equation on $\beta_1$.
+$$\left[\sum_{i}x_{i}x_{i}^T -\frac{1}{N}(N_1\hat{\mu_1} + N_2\hat{\mu_2})(N_1\hat{\mu_1} + N_2\hat{\mu_2})^T\right]\beta = N(\hat{\mu_2} - \hat{\mu_1})$$
+Plug pooled variance $\hat{\Sigma},$ and rewrite everything in $\hat{\mu_1}$, $\hat{\mu_2}$ we get the equation.
+
+(3) $\Sigma_{B}\beta = [(\hat{\mu}_2 - \hat{\mu}_1)^T\beta](\hat{\mu}_2 - \hat{\mu}_1)\propto(\hat{\mu}_2 - \hat{\mu}_1).$
+
+(4) Follows the exact same argument as (3) since $\beta$ satisfies,
+
+$$\left[\sum_{i}x_{i}x_{i}^T -\frac{1}{N}(N_1\hat{\mu_1} + N_2\hat{\mu_2})(N_1\hat{\mu_1} + N_2\hat{\mu_2})^T\right]\beta = \frac{(c_1 - c_2)N_1 N_2}{N}(\hat{\mu}_1 - \hat{\mu}_2).$$
+
+(5) By multiply $(\hat{\mu_2}-\hat{\mu_1})^T$ on (2) we get proportion constant in (3) satisfies $c > 0$, $\hat{\beta} = c\hat{\Sigma}^{-1}(\hat{\mu}_2 - \hat{\mu}_1)$.
+The classification region for class 2, $\beta_{LDA} = \beta_{LR} = x^T \hat{\Sigma}^{-1} (\hat{\mu}_2 - \hat{\mu}_1).$
+\begin{eqnarray*}
+c_{LR}&=&\frac{1}{N}(N_1\hat{\mu}_1 + N_2\hat{\mu}_2) \hat{\Sigma}^{-1} (\hat{\mu}_2 - \hat{\mu}_1)\\
+      &=&c_{LDA} + \frac{N_2-N_1}{2N}(\hat{\mu}_2 - \hat{\mu}_1)^T\hat{\Sigma}^{-1}(\hat{\mu}_2 - \hat{\mu}_1) + \log(\frac{N_2}{N_1}).\\
+\end{eqnarray*}
+Hence same region iff $N_2 = N_1$.
